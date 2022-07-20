@@ -14,7 +14,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://bq-api.msantelices.repl.co/auth", {
+      .post("http://localhost:8000/auth", {
         user: "admin",
         password: "123456",
       })
