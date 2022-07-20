@@ -36,7 +36,7 @@ const Login = () => {
                   id="email"
                   name="email"
                   type="email"
-                  className="validate"
+                  className="white-text validate"
                   onChange={handleChange}
                 />
                 <label htmlFor="email" className="white-text">Email</label>
@@ -48,7 +48,7 @@ const Login = () => {
                   id="password"
                   name="password"
                   type="password"
-                  className="validate"
+                  className="white-text validate"
                   onChange={handleChange}
                 />
                 <label htmlFor="password" className="white-text">Password</label>
