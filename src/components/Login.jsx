@@ -39,7 +39,7 @@ const Login = () => {
                   className="validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className="white-text">Email</label>
               </div>
             </div>
             <div className="row">
@@ -51,7 +51,7 @@ const Login = () => {
                   className="validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className="white-text">Password</label>
               </div>
             </div>
             <div>
