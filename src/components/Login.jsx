@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -14,13 +14,12 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://bq-api.msantelices.repl.co/auth", {
+      .post("https://apiburgerqueenv1.herokuapp.com/auth", {
         user: "admin",
         password: "123456",
       })
-      .then((response) => console.log(response))
+      .then((response) => response = navigate("/Menu"))
       .catch((err) => console.log(err));
-    // navigate("/Menu");
   };
   return (
     <div className="card-container row">
