@@ -8,12 +8,6 @@ import ProtectedRoutes from './components/ProtectedRoutes';
 
 
 function App() {
-  // const auth = localStorage.getItem('token')
-  // const [auth, setAuth] = useState("")
-
-  // useEffect(()=> {
-  //   setAuth(localStorage.getItem('token'))
-  // }, [])
   return (
     <Routes>
 

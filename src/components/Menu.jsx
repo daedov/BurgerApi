@@ -14,7 +14,7 @@ const Menu = () => {
     }
 
     axios
-      .get('http://localhost:8000/', { headers })
+      .get('https://apiburgerqueenv1.herokuapp.com/', { headers })
       .then((response)=> {
         console.log(response.data)
       })
