@@ -1,11 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 const Menu = () => {
   const navigate = useNavigate();
   const handleLogout = () => {
+    localStorage.removeItem('token')
     navigate('/');
   };
+  useEffect(() => {
+    let headers = {
+      Authorization: `Bearer ${localStorage.getItem('token')}`
+    }
+
+    axios
+      .get('http://localhost:8000/', { headers })
+      .then((response)=> {
+        console.log(response.data)
+      })
+      .catch((error)=> {
+        console.log(error)
+      })
+
+  }, [])
 
   return (
     <div className="row">
