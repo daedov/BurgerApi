@@ -15,15 +15,15 @@ const Login = () => {
     e.preventDefault();
     axios
       .post("https://apiburgerqueenv1.herokuapp.com/auth", {
-        email: "papitas@gmail.com",
-        password: "papitas123456",
+        email: "papitas@gmail.com", //valores referenciales
+        password: "papitas123456", //valores referenciales
       })
       .then((response) => {
-        console.log(response.data)
-        localStorage.setItem("token",response.data.token )
-         response = navigate("/Menu")
+        console.log(response.data);
+        localStorage.setItem("token", response.data.token);
+        response = navigate("/Menu"); //ruta referencial
       })
-      
+
       .catch((err) => console.log(err));
   };
   return (
@@ -43,7 +43,9 @@ const Login = () => {
                   className="white-text validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="email" className="white-text">Email</label>
+                <label htmlFor="email" className="white-text">
+                  Email
+                </label>
               </div>
             </div>
             <div className="row">
@@ -55,7 +57,9 @@ const Login = () => {
                   className="white-text validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="password" className="white-text">Password</label>
+                <label htmlFor="password" className="white-text">
+                  Password
+                </label>
               </div>
             </div>
             <div>
