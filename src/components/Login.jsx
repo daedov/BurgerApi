@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -18,9 +18,8 @@ const Login = () => {
         user: "admin",
         password: "123456",
       })
-      .then((response) => console.log(response))
+      .then((response) => response = navigate("/Menu"))
       .catch((err) => console.log(err));
-    // navigate("/Menu");
   };
   return (
     <div className="card-container row">
@@ -36,10 +35,10 @@ const Login = () => {
                   id="email"
                   name="email"
                   type="email"
-                  className="validate"
+                  className="white-text validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className="white-text">Email</label>
               </div>
             </div>
             <div className="row">
@@ -48,10 +47,10 @@ const Login = () => {
                   id="password"
                   name="password"
                   type="password"
-                  className="validate"
+                  className="white-text validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className="white-text">Password</label>
               </div>
             </div>
             <div>

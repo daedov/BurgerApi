@@ -22,3 +22,7 @@ body, html {
 .card-panel {
   text-align: center;
 }
+
+label{
+  font-weight: bold;
+}
