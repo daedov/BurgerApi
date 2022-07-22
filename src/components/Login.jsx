@@ -14,11 +14,16 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://apiburgerqueenv1.herokuapp.com/auth", {
-        user: "admin",
-        password: "123456",
+      .post("http://localhost:8000/auth", {
+        email: "papitas@gmail.com",
+        password: "papitas123456",
       })
-      .then((response) => response = navigate("/Menu"))
+      .then((response) => {
+        console.log(response.data)
+        localStorage.setItem("token",response.data.token )
+         response = navigate("/Menu")
+      })
+      
       .catch((err) => console.log(err));
   };
   return (
