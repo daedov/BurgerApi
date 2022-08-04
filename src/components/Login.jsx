@@ -15,12 +15,13 @@ const Login = () => {
     e.preventDefault();
     axios
       .post("http://localhost:8000/auth", {
-        email: "papitas@gmail.com",
-        password: "papitas123456",
+        email: "papasconaceituna@gmail.com",
+        password: "papasconaceituna123456",
       })
       .then((response) => {
         console.log(response.data)
         localStorage.setItem("token",response.data.token )
+        console.log(localStorage.getItem('token'))
          response = navigate("/Menu")
       })
       
