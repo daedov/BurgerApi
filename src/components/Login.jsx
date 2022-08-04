@@ -24,7 +24,7 @@ const Login = () => {
         console.log(localStorage.getItem('token'))
          response = navigate("/Menu")
       })
-      
+
       .catch((err) => console.log(err));
   };
   return (
@@ -44,7 +44,9 @@ const Login = () => {
                   className="white-text validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="email" className="white-text">Email</label>
+                <label htmlFor="email" className="white-text">
+                  Email
+                </label>
               </div>
             </div>
             <div className="row">
@@ -56,7 +58,9 @@ const Login = () => {
                   className="white-text validate"
                   onChange={handleChange}
                 />
-                <label htmlFor="password" className="white-text">Password</label>
+                <label htmlFor="password" className="white-text">
+                  Password
+                </label>
               </div>
             </div>
             <div>
