@@ -14,14 +14,15 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://apiburgerqueenv1.herokuapp.com/auth", {
-        email: "papitas@gmail.com", //valores referenciales
-        password: "papitas123456", //valores referenciales
+      .post("http://localhost:8000/auth", {
+        email: "papasconaceituna@gmail.com",
+        password: "papasconaceituna123456",
       })
       .then((response) => {
-        console.log(response.data);
-        localStorage.setItem("token", response.data.token);
-        response = navigate("/Menu"); //ruta referencial
+        console.log(response.data)
+        localStorage.setItem("token",response.data.token )
+        console.log(localStorage.getItem('token'))
+         response = navigate("/Menu")
       })
 
       .catch((err) => console.log(err));
