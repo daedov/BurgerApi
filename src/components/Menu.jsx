@@ -13,7 +13,7 @@ const Menu = () => {
       Authorization: `Bearer ${localStorage.getItem('token')}`
     } 
     axios
-      .get('https://apiburgerqueenv1.herokuapp.com/', { headers })
+      .get('http://localhost:8000/', { headers })
       .then((response)=> {
         console.log(response.data)
       })
@@ -29,15 +29,16 @@ const Menu = () => {
     }
     const body =   {client: "dany 6",
     products : [{
-      qty: 6,
-      product: "patatas",
-      price: 5000
+      qty: 10,
+      product: "vodka de papas sabor limon",
+      price: 500
       },
-      {
-        qty: 1,
-        product: "patatas fritas",
-        price: 10000
-      }]
+      // {
+      //   qty: 1000,
+      //   product: "patatas fritas",
+      //   price: 10000
+      // }
+    ]
     }
     console.log(headers)
     axios
@@ -45,7 +46,7 @@ const Menu = () => {
     .then((response) => {
       console.log("orderrr---------->",response.data)
     }) 
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(err.response.data));
   }
   return (
     <div className="row">

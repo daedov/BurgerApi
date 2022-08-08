@@ -10,13 +10,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={ <Login /> } />
-
-
       <Route path="/Menu" element={<ProtectedRoutes>  <Menu/> </ProtectedRoutes> } /> 
       <Route path="/Orders" element={<ProtectedRoutes>  <Orders/> </ProtectedRoutes> } /> 
       <Route/>
-
-
     </Routes>
   );
 }
