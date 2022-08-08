@@ -18,7 +18,7 @@ const Login = () => {
         email: "papasconaceituna@gmail.com",
         password: "papasconaceituna123456",
       })
-      .then((response) => {
+      .then((response) => { 
         console.log(response.data)
         localStorage.setItem("token",response.data.token )
         console.log(localStorage.getItem('token'))
