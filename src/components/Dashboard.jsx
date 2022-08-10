@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
-import BarChart from "./BarChar";
-import {UserData} from '../Data'
+// import BarChart from "./BarChar";
+// import {UserData} from '../Data'
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -25,24 +25,24 @@ const Dashboard = () => {
       })
   }, [])
 
-  const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
-    datasets: [
-      {
-        label: "Users Gained",
-        data: UserData.map((data) => data.userGain),
-        backgroundColor: [
-          "rgba(75,192,192,1)",
-          "#ecf0f1",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ],
-  });
+  // const [userData, setUserData] = useState({
+  //   labels: UserData.map((data) => data.year),
+  //   datasets: [
+  //     {
+  //       label: "Users Gained",
+  //       data: UserData.map((data) => data.userGain),
+  //       backgroundColor: [
+  //         "rgba(75,192,192,1)",
+  //         "#ecf0f1",
+  //         "#50AF95",
+  //         "#f3ba2f",
+  //         "#2a71d0",
+  //       ],
+  //       borderColor: "black",
+  //       borderWidth: 2,
+  //     },
+  //   ],
+  // });
 
   return (
     <>
@@ -52,7 +52,7 @@ const Dashboard = () => {
     </div>
     <div id="myChart">
     <div style={{ width: 700 }}>
-        <BarChart chartData={userData} />
+        {/* <BarChart chartData={userData} /> */}
       </div>
     </div>
     </>
