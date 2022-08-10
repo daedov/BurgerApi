@@ -15,16 +15,13 @@ const Login = () => {
     e.preventDefault();
     axios
       .post("http://localhost:8000/auth", {
-        email: "papasconaceituna@gmail.com",
-        password: "papasconaceituna123456",
+        email: user.email,
+        password: user.password,
       })
       .then((response) => { 
-        console.log(response.data)
-        localStorage.setItem("token",response.data.token )
-        console.log(localStorage.getItem('token'))
-         response = navigate("/Menu")
+        localStorage.setItem("token", response.data.token )
+        response.data.data.role.description === 'admin' ? navigate("/Dashboard") : navigate("/")
       })
-
       .catch((err) => console.log(err));
   };
   return (
@@ -32,7 +29,7 @@ const Login = () => {
       <div className="col s12 m6">
         <div className="card">
           <div className="card-panel black-text teal accent-4">
-            <span className="card-title">Burger</span>
+            <span className="card-title">Burger Administration</span>
           </div>
           <form className="form-container col s12" onSubmit={handleSubmit}>
             <div className="row">
