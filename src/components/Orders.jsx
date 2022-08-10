@@ -5,6 +5,7 @@ import CardsOrders from "./CardsOrders";
 
 const Orders = () => {
   const [orders, setOrders] = useState()
+  const [users, setUsers] = useState()
   useEffect(() =>{ 
     let headers = {
       Authorization : `Bearer ${localStorage.getItem('token')}`
@@ -13,6 +14,15 @@ const Orders = () => {
     .get('http://localhost:8000/orders', {headers})
     .then((response) => {
       setOrders(response.data.result)
+    })
+  
+    .catch((error)=>{
+      console.log(error)
+    })
+    axios
+    .get('http://localhost:8000/users', {headers})
+    .then((response)=>{
+      setUsers(response.data.result)
     })
     .catch((error)=>{
       console.log(error)
@@ -39,27 +49,7 @@ const Orders = () => {
     //   .catch((err) => console.log(err.response.data));
 
   return (
-    <  CardsOrders orders = {orders} />
-    // <div className="col s12 m5">
-    //   <div className="card-panel teal">
-    //     <span className="white-text">tecito</span>
-    //   </div>
-    //   <div className="card-panel teal">
-    //     <span className="white-text">cafecito</span>
-    //   </div>
-    //   <div className="card-panel teal">
-    //     <span className="white-text">chelita</span>
-    //   </div>
-    //   <div className="card-panel teal">
-    //     <span className="white-text">vinito</span>
-    //   </div>
-    //   <div>
-    //     <input type="text" id="client" />
-    //     <button className="waves-light btn" onClick={handlePostOrder}>
-    //       Crear orden
-    //     </button>
-    //   </div>
-    // </div>
+    <CardsOrders orders = {orders} users = {users}/>
   );
 };
 

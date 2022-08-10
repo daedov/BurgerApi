@@ -10,6 +10,9 @@ const Dashboard = () => {
     localStorage.removeItem('token')
     navigate('/');
   };
+  const handleOrders =()=>{
+    navigate('/orders')
+  }
 
   useEffect(() => {
     let headers = {
@@ -49,6 +52,8 @@ const Dashboard = () => {
     <div className="row">
     <button className="waves-effect waves-light btn" type="submit"
       onClick={handleLogout}>Logout</button>
+      <button className="waves-effect waves-light btn" type="submit"
+      onClick={handleOrders}>Orders</button>
     </div>
     <div id="myChart">
     <div style={{ width: 700 }}>

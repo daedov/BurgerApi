@@ -10,6 +10,7 @@ body, html {
 	width: 100%;
   background-color: #263238;
   font-family: 'Roboto Mono', monospace;
+  color: darkgrey;
 }
 
 .card-container{
