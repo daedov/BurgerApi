@@ -1,6 +1,7 @@
 /** @format */
 
 import { formatISO } from 'date-fns';
+import './CardsOrders.css';
 
 const CardsOrders = ({ orders, users }) => {
   if (orders && users) {
@@ -9,10 +10,10 @@ const CardsOrders = ({ orders, users }) => {
 
     const arrayInfoOrders = orders.map((element) => {
       const date = formatISO(new Date(element.dataEntry), {
-        representation: 'date',
+        representation: 'date'
       });
       const time = formatISO(new Date(element.dataEntry), {
-        representation: 'time',
+        representation: 'time'
       });
       let propertiesOrders = {
         client: element.client,
@@ -30,18 +31,25 @@ const CardsOrders = ({ orders, users }) => {
       return user.email;
     };
     return (
-      <table className="table-fixed">
+      <table className="border-collapse border border-slate-400">
         <thead>
           <tr>
             <th>Creada por</th>
             <th>Fecha y hora</th>
             <th>Estado</th>
-            <th>Productos</th>
+            <th className='tableProducts'>
+              <p>Productos</p>
+              <tr className='centerItemsProduct'>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Valor Unidad</th>
+              </tr>
+            </th>
           </tr>
         </thead>
         <tbody>
           {arrayInfoOrders.map((element) => (
-            <tr key={element.id}>
+            <tr key={element.id} >
               <td>{nameUserIdOrder(element.userId)}</td>
               <td>
                 {element.date}, {element.hour}hrs.
@@ -49,16 +57,9 @@ const CardsOrders = ({ orders, users }) => {
               <td>{element.status}</td>
               <td>
                 {element.products.map((el) => (
-                  <table key={el.product}>
-                    <thead>
-                      <tr>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Valor Unidad</th>
-                      </tr>
-                    </thead>
+                   <table key={el.product}>  
                     <tbody>
-                      <tr>
+                      <tr className='centerContentProduct'>
                         <td>{el.product}</td>
                         <td>{el.qty}</td>
                         <td>{el.price}</td>
